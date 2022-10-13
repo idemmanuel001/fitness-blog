@@ -1,14 +1,15 @@
 import { useState } from 'react';
 
 
-const Categories = ({ categories, filterItems }) => {
+const Categories = ({ filterItems, categories }) => {
     const [activeTab, setActiveTab] = useState(0);
+    const allCategories = [{ name: 'All', slug: 'all' }, ...categories];
+
 
     return (
         <div className="flex flex-wrap items-center justify-center mb-6 md:flex-nowrap">
 
-            {categories.map((category, index) => {
-
+            {allCategories.map((category, index) => {
                 return (
                     <button
                         key={index}
@@ -17,11 +18,10 @@ const Categories = ({ categories, filterItems }) => {
                             () => {
                                 filterItems(category);
                                 setActiveTab(index);
-
                             }
                         }
                     >
-                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                        {category.name}
                     </button>
 
                 );

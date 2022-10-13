@@ -1,48 +1,42 @@
-import { Fragment, useEffect, useState } from 'react';
-import BlogPost from './BlogPost';
+import { Fragment, useState } from 'react';
 import Categories from './Categories';
-import { data } from './MockData';
+import PostPreview from './PostPreview';
 
-/* Extracting the list of category from the data and puting it 
- in an array of unique set of values*/
-let allCategories = ['all', ...new Set(data.map(dataItem => dataItem.category))];
 
-const PostLists = () => {
-  const [posts, setPosts] = useState(data);
-  const [categories, setCategories] = useState(allCategories);
-  const [numberOfPosts, setNumberOfPosts] = useState(data.length);
+const PostLists = ({ posts, categories }) => {
+  const [renderedPosts, setRenderedPosts] = useState(posts);
+
 
   /* Filter items based on categories */
   const filterItems = (category) => {
-    if (category === 'all') {
-      setPosts(data);
+    if (category.slug === 'all') {
+      setRenderedPosts(posts);
       return;
     }
-    const newPosts = data.filter(dataItem => {
+    const newPosts = posts.filter(blogItem => {
       return (
-        dataItem.category === category
+        category.slug === blogItem.categories.slug
       );
     });
-    setPosts(newPosts);
-
+    setRenderedPosts(newPosts);
   };
 
   return (
     <div className='flex flex-col w-full md:grow md:mr-12 px-2 md:items-start md:justify-center'>
 
-      <Categories categories={categories} data={data} filterItems={filterItems} />
+      <Categories filterItems={filterItems} categories={categories} renderedPosts={renderedPosts} />
 
+      {renderedPosts.map(post => {
 
-      {posts.map(post => {
-        const { id, title, category, img, content } = post;
         return (
-          <Fragment key={id}>
-            <BlogPost post={post} />
+          <Fragment key={'pos'}>
+            <PostPreview post={post} />
           </Fragment>
         );
       })}
     </div>
   );
+
 };
 
 export default PostLists;

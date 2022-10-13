@@ -1,15 +1,16 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import PostLists from '../components/PostList';
 import HeroBgImage from '../public/images/fruit-drink-hero-img.jpg';
-import { getAllPosts } from '../lib/fetchData';
+import { getAllPosts, getAllCategpries } from '../lib/fetchData';
 
 
 
-const Home = ({ posts }) => {
-  console.log(posts);
+
+const Home = (props) => {
+  const { posts, categories } = props;
+
 
   return (
     <div className="w-full min-h-screen py-2">
@@ -60,7 +61,7 @@ const Home = ({ posts }) => {
 
         {/* Blog Post Section */}
         <section className="flex flex-col items-center  md:items-start w-full max-w-4xl py-6 mx-auto md:py-8 md:flex-row">
-          <PostLists />
+          <PostLists posts={posts} categories={categories} />
           <aside className='w-full h-full bg-black md:basis-1/3'>
             Aside
           </aside>
@@ -81,8 +82,10 @@ export async function getStaticProps() {
 
   /* Fetching data at built time */
   const posts = (await getAllPosts() || []);
+  const categories = (await getAllCategpries() || []);
+
 
   return {
-    props: { posts }
+    props: { posts, categories }
   };
 }
