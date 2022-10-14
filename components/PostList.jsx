@@ -22,14 +22,14 @@ const PostLists = ({ posts, categories }) => {
   };
 
   return (
-    <div className='flex flex-col w-full md:grow md:mr-12 px-2 md:items-start md:justify-center'>
+    <div className='flex flex-col w-full px-2 md:grow md:mr-12 md:items-start md:justify-center'>
 
       <Categories filterItems={filterItems} categories={categories} renderedPosts={renderedPosts} />
 
       {renderedPosts.map(post => {
 
         return (
-          <Fragment key={'pos'}>
+          <Fragment key={post.slug}>
             <PostPreview post={post} />
           </Fragment>
         );

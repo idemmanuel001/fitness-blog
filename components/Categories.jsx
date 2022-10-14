@@ -7,13 +7,13 @@ const Categories = ({ filterItems, categories }) => {
 
 
     return (
-        <div className="flex flex-wrap items-center justify-center mb-6 md:flex-nowrap">
+        <div className="flex flex-wrap items-center justify-center mb-5 text-sm md:flex-nowrap">
 
             {allCategories.map((category, index) => {
                 return (
                     <button
                         key={index}
-                        className={`font-bold text-sm mr-2 md:mr-3 p-1 transition duration-300 ease-in hover:text-dark-green ${activeTab === index ? 'text-dark-green' : 'text-medium-black'}`}
+                        className={`font-bold mr-2 md:mr-3 p-1 transition duration-300 ease-in hover:text-dark-green ${activeTab === index ? 'text-dark-green' : 'text-medium-black'}`}
                         onClick={
                             () => {
                                 filterItems(category);

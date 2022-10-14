@@ -3,13 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PostLists from '../components/PostList';
 import HeroBgImage from '../public/images/fruit-drink-hero-img.jpg';
-import { getAllPosts, getAllCategpries } from '../lib/fetchData';
+import { getAllPosts, getAllCategpries, getAllTags, getAuthour } from '../lib/fetchData';
+import SocialMedia from '../components/SocialMedia';
+import TagsCloud from '../components/TagsCloud';
+import AuthorPreview from '../components/AuthorPreview';
 
 
 
 
 const Home = (props) => {
-  const { posts, categories } = props;
+  const { posts, categories, tags, author } = props;
+
+  // console.log(posts);
 
 
   return (
@@ -60,10 +65,16 @@ const Home = (props) => {
 
 
         {/* Blog Post Section */}
-        <section className="flex flex-col items-center  md:items-start w-full max-w-4xl py-6 mx-auto md:py-8 md:flex-row">
+        <section className="flex flex-col items-center w-full max-w-4xl py-6 mx-auto md:items-start md:py-8 md:flex-row">
           <PostLists posts={posts} categories={categories} />
-          <aside className='w-full h-full bg-black md:basis-1/3'>
-            Aside
+
+
+          {/* Aside Section */}
+          <aside className='flex flex-col items-center justify-start w-full h-full px-4 md:basis-1/3 md:items-start'>
+
+            <SocialMedia author={author} />
+            <TagsCloud />
+            <AuthorPreview />
           </aside>
         </section>
 
@@ -83,9 +94,11 @@ export async function getStaticProps() {
   /* Fetching data at built time */
   const posts = (await getAllPosts() || []);
   const categories = (await getAllCategpries() || []);
+  const tags = (await getAllTags() || []);
+  const author = (await getAuthour() || []);
 
 
   return {
-    props: { posts, categories }
+    props: { posts, categories, tags, author }
   };
 }
