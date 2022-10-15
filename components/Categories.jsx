@@ -7,7 +7,7 @@ const Categories = ({ filterItems, categories }) => {
 
 
     return (
-        <div className="flex flex-wrap items-center justify-center mb-5 text-sm md:flex-nowrap">
+        <div className="flex flex-wrap items-center justify-center mb-3 md:mb-5 text-sm md:flex-nowrap">
 
             {allCategories.map((category, index) => {
                 return (

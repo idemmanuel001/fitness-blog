@@ -13,9 +13,7 @@ import AuthorPreview from '../components/AuthorPreview';
 
 const Home = (props) => {
   const { posts, categories, tags, author } = props;
-
-  // console.log(posts);
-
+  console.log(posts);
 
   return (
     <div className="w-full min-h-screen py-2">
@@ -73,7 +71,7 @@ const Home = (props) => {
           <aside className='flex flex-col items-center justify-start w-full h-full px-4 md:basis-1/3 md:items-start'>
 
             <SocialMedia author={author} />
-            <TagsCloud />
+            <TagsCloud tags={tags} />
             <AuthorPreview />
           </aside>
         </section>
