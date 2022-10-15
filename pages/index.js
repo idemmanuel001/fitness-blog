@@ -72,7 +72,7 @@ const Home = (props) => {
 
             <SocialMedia author={author} />
             <TagsCloud tags={tags} />
-            <AuthorPreview />
+            <AuthorPreview author={author} />
           </aside>
         </section>
 
