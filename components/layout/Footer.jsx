@@ -50,14 +50,12 @@ const Footer = () => {
     <footer className="w-full h-fit">
       <div className="flex flex-col justify-center items-center px-4 py-6 w-full bg-clear-day">
         <div className="w-11/12 h-full max-w-lg flex flex-col justify-center mb-4 items-center">
-          <h2 className="mb-2 font-bold text-center text-raisin-black">
+          <h2 className="mb-2 font-bold text-center w-11/12 text-raisin-black">
             SUBSCRIBE AND DON'T MISS NEW ARTICLES
           </h2>
 
           <p className="text-center text-sm w-11/12">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sint
-            quo nemo pariatur
-            expedita nulla maiores tempore, perspiciatis debitis. Similique.
+            Please sign up for my email notification so you don't miss out when I post a new article. You may withdraw your consent any time by unsubscribing.
           </p>
         </div>
 
@@ -66,7 +64,7 @@ const Footer = () => {
 
           {/* successful form submission message */}
           <p className={successMessageStyles}>
-          <MdOutlineMarkEmailRead className='w-8 h-8 md:mr-1' />  Form submited successfully, Thank You.
+          <MdOutlineMarkEmailRead className='w-8 h-8 md:mr-1' />Submited successfully, Thanks for subscribing.
           </p>
 
           <form
@@ -114,7 +112,7 @@ const Footer = () => {
 
       </div>
       <div className="flex justify-center items-center h-fit py-4 bg-raisin-black text-lavender ">
-        <p className="text-center max-w-lg text-sm py-4 font-semibold px-4 ">
+        <p className="text-center max-w-lg w-11/12 text-sm py-4 font-semibold px-4 ">
           Built by Idoko Emmanuel, 2022. All rights reserved.
         </p>
       </div>
