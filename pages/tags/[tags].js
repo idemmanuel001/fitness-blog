@@ -4,7 +4,7 @@ import PostPreview from '../../components/PostPreview';
 
 const Tags = ({ posts, tags }) => {
 
-    if (posts.length < 1) {
+    if (!posts.length) {
         return (
             <div className='w-full max-w-4xl mx-auto h-72-vh py-6 lg:px-0 px-4 text-raisin-black'>
                 <h1 className='font-bold text-2xl md:text-3xl  capitalize'> No Post for this tag now</h1>
