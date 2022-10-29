@@ -24,7 +24,7 @@ const PostPreview = ({ post }) => {
                 <p className="text-sm italic font-semibold text-medium-black">Published on: {moment(publishedDate).format('MMM DD, YYYY')}</p>
                 <p className="text-sm text-left text-medium-black md:my-1">{excerpt.slice(0, 130)}...</p>
 
-                <Link href={`/post/${slug}`} passHref>
+                <Link href={`/posts/${slug}`} passHref>
                     <a className='text-sm underline transition duration-300 text-medium-black hover:text-dark-green'>
                         Read More
                     </a>

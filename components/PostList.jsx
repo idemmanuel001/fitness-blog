@@ -22,7 +22,7 @@ const PostLists = ({ posts, categories }) => {
   };
 
   return (
-    <div className='flex flex-col w-full px-2 md:grow md:mr-12 md:items-start md:justify-center'>
+    <div className='flex flex-col w-full md:grow md:mr-12 md:items-start md:justify-center'>
 
       <Categories filterItems={filterItems} categories={categories} renderedPosts={renderedPosts} />
 

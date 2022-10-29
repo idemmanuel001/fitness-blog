@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 const Header = () => {
 
     return (
-        <header className='z-50 w-full h-10 px-4 py-4 mb-2 bg-white shadow md:h-12 md:shadow-md md:px-20'>
+        <header className='z-50 w-full h-10 px-4 py-4 mb-2 bg-white shadow md:h-12 md:shadow-md'>
             <div className='flex items-center justify-between w-full h-full max-w-4xl mx-auto'>
 
                 <Link href='/' passhref className='w-full h-full'>

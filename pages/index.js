@@ -13,7 +13,6 @@ import AuthorPreview from '../components/AuthorPreview';
 
 const Home = (props) => {
   const { posts, categories, tags, author } = props;
-  console.log(posts);
 
   return (
     <div className="w-full min-h-screen py-2">
@@ -63,12 +62,12 @@ const Home = (props) => {
 
 
         {/* Blog Post Section */}
-        <section className="flex flex-col items-center w-full max-w-4xl py-6 mx-auto md:items-start md:py-8 md:flex-row">
+        <section className="flex flex-col px-4 items-center w-full max-w-4xl py-6 mx-auto md:items-start md:py-8 md:flex-row">
           <PostLists posts={posts} categories={categories} />
 
 
           {/* Aside Section */}
-          <aside className='flex flex-col items-center justify-start w-full h-full px-4 md:basis-1/3 md:items-start'>
+          <aside className='flex flex-col items-center justify-start w-full h-full md:basis-1/3 md:items-start'>
 
             <SocialMedia author={author} />
             <TagsCloud tags={tags} />
