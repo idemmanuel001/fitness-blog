@@ -30,7 +30,7 @@ const TagsCloud = ({ tags }) => {
             tags.slice(0, 4).map(tag => {
               return (
                 <Link key={tag.tags} href={`/tags/${tag.tags}`} passHref>
-                  <span className="text-center cursor-pointer text-lavender bg-dark-green text-sm font-semibold rounded-sm py-0.5 px-1 mr-1 mb-1 align-middle ">
+                  <span className="text-center cursor-pointer transition duration-300 text-lavender bg-dark-green text-sm font-semibold rounded-sm py-0.5 px-1 mr-1 mb-1 align-middle ">
                     #{tag.tags}
                   </span>
                 </Link>
