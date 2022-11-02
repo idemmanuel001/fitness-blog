@@ -61,7 +61,6 @@ const Tags = ({ posts, allTags, tags }) => {
     );
 };
 
-
 export default Tags;
 
 export async function getStaticProps({ params }) {
