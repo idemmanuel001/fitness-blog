@@ -7,7 +7,7 @@ const Tags = ({ posts, allTags, tags }) => {
 
     if (posts.length < 1) {
         return (
-            <div className='w-full max-w-4xl mx-auto py-6 lg:px-0 px-4 text-raisin-black'>
+            <div className='w-full max-w-4xl mx-auto py-6 lg:px-0 px-6 text-raisin-black'>
                 <h1 className='font-bold text-2xl md:text-3xl  capitalize'> No Post for #{tags}</h1>
                 <p className='font-semibold text md:text-lg mt-2'> please follow one of the #tags below for more posts</p>
                 <ul className='my-2 md:my-3 flex flex-col flex-wrap items-start justify-center'>
@@ -27,7 +27,7 @@ const Tags = ({ posts, allTags, tags }) => {
     }
 
     return (
-        <div className='w-full min-h-screen py-4 md:py-6 px-4'>
+        <div className='w-full min-h-screen py-4 md:py-6 px-6'>
 
             <div className='mx-auto  w-full max-w-4xl'>
                 <h1 className='font-bold w-11/12 mx-auto md:w-full text-2xl md:text-3xl capitalize text-raisin-black'>
@@ -41,8 +41,8 @@ const Tags = ({ posts, allTags, tags }) => {
                     })}
                 </div>
 
-                <div className='my-2 md:my-4 w-11/12 mx-auto md:w-full' >
-                    <h3 className='mb-1 text-lg font-bold'>check out some #tags below</h3>
+                <div className='my-2 md:my-4 w-full mx-auto md:w-full' >
+                    <h3 className='mb-1 text-lg font-bold'>check out some other #tags below</h3>
                     <ul className='flex flex-col flex-wrap items-start justify-center'>
                         {allTags.map(tag => {
                             return (

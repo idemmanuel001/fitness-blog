@@ -29,7 +29,7 @@ const Home = (props) => {
 
           {/* Hero Background Image Container */}
           <div
-            className='relative w-full h-80-vh -z-10'
+            className='relative w-full h-72-vh md:h-80-vh -z-10'
           >
             <Image
               src={HeroBgImage}
@@ -62,7 +62,7 @@ const Home = (props) => {
 
 
         {/* Blog Post Section */}
-        <section className="flex flex-col px-4 items-center w-full max-w-4xl py-6 mx-auto md:items-start md:py-8 md:flex-row">
+        <section className="flex flex-col px-6 items-center w-full max-w-4xl py-6 mx-auto md:items-start md:py-8 md:flex-row">
           <PostLists posts={posts} categories={categories} />
 
 

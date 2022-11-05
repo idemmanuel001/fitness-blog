@@ -42,7 +42,7 @@ const TagsCloud = ({ tags }) => {
         {/* Toggle button */}
         <button
           onClick={() => setViewMore(!viewMore)}
-          className="text-sm text-center underline transition duration-300 cursor-pointer text-raisin-black hover:text-dark-green "
+          className="text-sm w-fit self-center text-center underline transition duration-300 cursor-pointer text-raisin-black hover:text-dark-green "
         >
           {viewMore ? 'view less' : 'view more'}
         </button>

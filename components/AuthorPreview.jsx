@@ -9,7 +9,7 @@ const AuthorPreview = ({ author }) => {
         About Author
       </h2>
 
-      <div className='relative block w-11/12 max-w-2xl border h-52 md:h-40 '>
+      <div className='relative block w-full max-w-2xl border h-52 md:h-40 '>
         <Image
           src={thumbnail.url}
           alt={thumbnail.title}
@@ -20,7 +20,7 @@ const AuthorPreview = ({ author }) => {
         />
       </div>
 
-      <p className="w-11/12 my-2 text-sm text-justify text-medium-black md:text-left">
+      <p className="w-full my-2 text-sm text-justify text-medium-black md:text-left">
         {bioPreview}
       </p>
     </div>

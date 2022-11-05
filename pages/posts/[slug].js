@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getPostBySlug, getAllPosts, getSimilarPosts } from '../../lib/fetchData';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import PostPreview from '../../components/PostPreview';
@@ -31,9 +32,13 @@ const Post = ({ post, similarPosts }) => {
                 </div>
 
                 <ul>
-                    {tagsCollection.items.map(item => {
+                    {tagsCollection.items.map(tag => {
                         return (
-                            <li>{item.tags}</li>
+                            <Link key={tag.tags} href={`/tags/${tag.tags}`} passHref>
+                                <span className="text-center cursor-pointer text-lavender bg-dark-green font-semibold rounded-sm py-0.5 px-1 mr-1 mb-1 text-sm align-middle ">
+                                    #{tag.tags}
+                                </span>
+                            </Link>
                         );
                     })}
                 </ul>
