@@ -30,7 +30,7 @@ const Tags = ({ posts, allTags, tags }) => {
         <div className='w-full min-h-screen py-4 md:py-6 px-6'>
 
             <div className='mx-auto  w-full max-w-4xl'>
-                <h1 className='font-bold w-11/12 mx-auto md:w-full text-2xl md:text-3xl capitalize text-raisin-black'>
+                <h1 className='font-bold w-full mx-auto md:w-full text-2xl md:text-3xl capitalize text-raisin-black'>
                     Posts About #{tags}
                 </h1>
                 <div className='flex flex-col my-4 w-full items-start justify-start'>

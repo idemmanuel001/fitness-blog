@@ -21,11 +21,11 @@ const PostPreview = ({ post }) => {
             <div className="flex flex-col items-start w-full my-2 text-left sm:my-0 sm:justify-start md:w-full md:ml-4 md:items-start ">
 
                 <h2 className='mt-0 text-lg font-bold text-night-rider'> {title}</h2>
-                <p className="text-sm italic font-semibold text-medium-black">Published on: {moment(publishedDate).format('MMM DD, YYYY')}</p>
-                <p className="text-sm text-left text-medium-black md:my-1">{excerpt.slice(0, 130)}...</p>
+                <p className="italic font-semibold text-medium-black">Published on: {moment(publishedDate).format('MMM DD, YYYY')}</p>
+                <p className="text-left text-medium-black md:my-1">{excerpt.slice(0, 130)}...</p>
 
                 <Link href={`/posts/${slug}`} passHref>
-                    <a className='text-sm underline transition duration-300 text-medium-black hover:text-dark-green'>
+                    <a className='underline transition duration-300 text-medium-black hover:text-dark-green'>
                         Read More
                     </a>
                 </Link>
