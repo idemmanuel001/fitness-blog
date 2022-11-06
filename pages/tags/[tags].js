@@ -33,7 +33,7 @@ const Tags = ({ posts, allTags, tags }) => {
                 <h1 className='font-bold w-full mx-auto md:w-full text-2xl md:text-3xl capitalize text-raisin-black'>
                     Posts About #{tags}
                 </h1>
-                <div className='flex flex-col my-4 w-full items-start justify-start'>
+                <div className='flex flex-col my-3 w-full items-start justify-start'>
                     {posts.map(post => {
                         return (
                             <PostPreview key={post.slug} post={post} />

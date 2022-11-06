@@ -12,11 +12,11 @@ const Post = ({ post, similarPosts }) => {
     console.log(post);
     console.log(similarPosts);
     return (
-        <div className='w-full py-3 px-4'>
-            <div className='w-full mx-auto'>
-                <h1>{title}</h1>
+        <div className='w-full px-6 py-3'>
+            <div className='w-full max-w-4xl mx-auto'>
+                <h1 className='my-3 text-xl font-bold md:mb-6 md:text-4xl'>{title}</h1>
 
-                <div className='relative md:float-left block aspect-[16/9] md:h-60 '>
+                <div className='relative md:float-left block aspect-[16/9] md:h-60 md:shadow-sm md:mr-5  '>
                     <Image
                         src={image.url}
                         alt={image.title}
@@ -27,11 +27,11 @@ const Post = ({ post, similarPosts }) => {
                     />
                 </div>
 
-                <div>
+                <div className='my-4 md:my-0'>
                     {documentToReactComponents(content.json)}
                 </div>
 
-                <ul>
+                <ul className='mb-3 md:my-2'>
                     {tagsCollection.items.map(tag => {
                         return (
                             <Link key={tag.tags} href={`/tags/${tag.tags}`} passHref>
@@ -44,9 +44,9 @@ const Post = ({ post, similarPosts }) => {
                 </ul>
 
                 {/* Similar posts */}
-                <div>
-                    <h2>
-                        You can also read more
+                <div className='my-6'>
+                    <h2 className='text-xl font-bold'>
+                        You Can Also Read
                     </h2>
 
                     <div>
@@ -58,9 +58,6 @@ const Post = ({ post, similarPosts }) => {
                     </div>
                 </div>
             </div>
-
-
-            {/* Read More Section */}
 
         </div>
     );

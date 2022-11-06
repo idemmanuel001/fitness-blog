@@ -20,7 +20,7 @@ const AuthorPreview = ({ author }) => {
         />
       </div>
 
-      <p className="w-full my-2 text-sm text-justify text-medium-black md:text-left">
+      <p className="w-full my-2 text-justify text-medium-black md:text-left">
         {bioPreview}
       </p>
     </div>
