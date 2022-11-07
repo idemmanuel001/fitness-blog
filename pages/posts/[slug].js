@@ -9,8 +9,7 @@ import PostPreview from '../../components/PostPreview';
 const Post = ({ post, similarPosts }) => {
     const { title, image, content, tagsCollection, categgories } = post[0];
 
-    console.log(post);
-    console.log(similarPosts);
+
     return (
         <div className='w-full px-6 py-3'>
             <div className='w-full max-w-4xl mx-auto'>
@@ -49,10 +48,10 @@ const Post = ({ post, similarPosts }) => {
                         You Can Also Read
                     </h2>
 
-                    <div>
+                    <div className='flex flex-col items-center md:justify-start' >
                         {similarPosts.map(post => {
                             return (
-                                <PostPreview post={post} />
+                                <PostPreview key={post.slug} post={post} />
                             );
                         })}
                     </div>

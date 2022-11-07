@@ -11,8 +11,6 @@
     "graphql-request": "^5.0.0",
     "moment": "^2.29.4",
     "next": "latest",
-    "next-share": "^0.18.1",
-    "nprogress": "^0.2.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0"
