@@ -97,7 +97,7 @@ const MobileNav = () => {
         {isOpen && (
 
           /* Navigation menu pane */
-          <div className='w-screen p-4 bg-white shadow h-fit'>
+          <div className='w-screen py-4 px-6 bg-white shadow h-fit'>
             <ul className="flex flex-col items-start justify-between">
               {links.map(link => {
                 return (

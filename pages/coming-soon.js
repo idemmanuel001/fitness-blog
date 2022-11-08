@@ -7,7 +7,7 @@ const ComingSoon = () => {
                 <h1 className='text-2xl md:text-4xl font-bold uppercase'>
                     Registration for the marathon has ended!
                 </h1>
-                <p className='text-lg md:text-xl font-semibold capitalize my-3'>please check back later to register</p>
+                <p className='text-lg md:text-xl font-semibold capitalize my-3'>please come back later to register</p>
             </div>
         </div>
     );
