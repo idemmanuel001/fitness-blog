@@ -27,7 +27,7 @@ const Tags = ({ posts, allTags, tags }) => {
     }
 
     return (
-        <div className='w-full min-h-screen py-4 md:py-6 px-6'>
+        <div className='w-full min-h-screen py-4 md:py-6 px-6 text-raisin-black'>
 
             <div className='mx-auto  w-full max-w-4xl'>
                 <h1 className='font-bold w-full mx-auto md:w-full text-2xl md:text-3xl capitalize text-raisin-black'>

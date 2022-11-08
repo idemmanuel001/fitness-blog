@@ -52,7 +52,7 @@ const Home = (props) => {
               <p className='px-4 my-4'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nisi provident
                 magnam porro, consectetur non sed id blanditiis hic temporibus? </p>
 
-              <Link href='#' passhref>
+              <Link href={`/marathon`} passhref>
                 <button className='px-6 py-2 bg-dark-green text-lavender '>I Am Interested</button>
               </Link>
             </div>

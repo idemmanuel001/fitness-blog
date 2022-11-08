@@ -11,7 +11,7 @@ const Post = ({ post, similarPosts }) => {
 
 
     return (
-        <div className='w-full px-6 py-3'>
+        <div className='w-full px-6 py-3 text-raisin-black'>
             <div className='w-full max-w-4xl mx-auto'>
                 <h1 className='my-3 text-xl font-bold md:mb-6 md:text-4xl'>{title}</h1>
 
@@ -26,7 +26,7 @@ const Post = ({ post, similarPosts }) => {
                     />
                 </div>
 
-                <div className='my-4 md:my-0'>
+                <div className='my-4 md:my-0 '>
                     {documentToReactComponents(content.json)}
                 </div>
 
