@@ -15,9 +15,10 @@ module.exports = {
         'raisin-black': '#232323',
         'night-rider': '#323232',
         'dark-gray': '#A8A8A9',
-        'true-black': '#0A0B0B',
         'medium-black': '#474746',
         'lavender': '#EFEFF0',
+        'light-brown': '#F9F9F9',
+        'dashed-border': '#E8E9E9'
       },
       height: {
         "72-vh": "72vh",
