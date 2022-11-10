@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import flowerPhoto from '../public/images/flower-photo.webp';
+import { getAuthour } from '../lib/fetchData';
+import SocialMedia from '../components/SocialMedia';
 
 
-const contact = () => {
+const contact = ({author}) => {
     return (
         <div className='w-full px-6 py-3 text-raisin-black'>
             <div className='flex flex-col items-center justify-center max-w-4xl mx-auto mt-2 mb-6 md:mb- md:flex-row'>
@@ -16,7 +18,7 @@ const contact = () => {
                         <div className="flex flex-col items-start justify-center w-full px-4 py-3 mb-3 border-2 border-dashed md:mb-2 bg-light-brown border-dashed-border h-fit">
                             <h2 className='w-full mb-2 text-lg font-bold uppercase'>send me a message</h2>
                            
-                            <form className='grid w-full grid-cols-2 grid-rows-5 gap-x-3 gap-y-3'>
+                            <form className='grid w-full grid-cols-2 grid-rows-5 mb-3 md:mb-5 gap-x-3 gap-y-3'>
                                 <input 
                                 className='col-span-2 row-span-1 p-2 border border-gray-400 md:col-span-1 bg-lavender focus:outline-dark-green' 
                                 type='text' 
@@ -45,10 +47,12 @@ const contact = () => {
                                 className='uppercase col-span-1 row-span-1 px-2 py-0.5 font-bold bg-dark-green text-lavender'
                                 type="submit">send</button>
                             </form>
+
+                            <SocialMedia author={author} />
                         </div>
 
                 </div>
-                <div className='relative h-96 w-full max-w-sm aspect-[16/9]'>
+                <div className='relative h-96 w-full md:max-w-sm aspect-[16/9]'>
                     <Image
                         src={flowerPhoto}
                         alt='flower photo'
@@ -65,3 +69,13 @@ const contact = () => {
 };
 
 export default contact;
+
+
+export async function getStaticProps(){
+  const author = (await getAuthour() || []);
+
+  return{
+    props: {author}
+  }
+
+}
