@@ -7,9 +7,14 @@ import PostPreview from '../../components/PostPreview';
 
 
 const Post = ({ post, similarPosts }) => {
-    const { title, image, content, tagsCollection, categgories } = post[0];
 
+    if (post && similarPosts) {
+        const { title, image, content, tagsCollection, categgories } = post[0];
+    }
 
+    if (!post && !similarPosts) return (
+        <h1 className='h-full w-full text-center '> Loading</h1>
+    );
     return (
         <div className='w-full px-6 py-3 text-raisin-black'>
             <div className='w-full max-w-4xl mx-auto'>
@@ -72,7 +77,8 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             post,
-            similarPosts
+            similarPosts,
+            revalidate: 10,
         }
     };
 };
@@ -90,6 +96,6 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: false
+        fallback: true
     };
 }

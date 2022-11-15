@@ -20,8 +20,8 @@ const PostPreview = ({ post }) => {
 
             <div className="flex flex-col items-start w-full mt-2 mb-4 text-left sm:my-0 sm:justify-start md:w-full md:ml-4 md:items-start ">
 
-                <h2 className='mt-0 text-lg font-bold text-night-rider'> {title}</h2>
-                <p className="italic font-semibold text-medium-black">Published on: {moment(publishedDate).format('MMM DD, YYYY')}</p>
+                <h2 className='mt-0 text-lg font-bold text-night-rider'>{title}</h2>
+                <p className="italic text-medium-black">Published on: {moment(publishedDate).format('MMM DD, YYYY')}</p>
                 <p className="text-left text-medium-black md:my-1">{excerpt.slice(0, 130)}...</p>
 
                 <Link href={`/posts/${slug}`} passHref>
