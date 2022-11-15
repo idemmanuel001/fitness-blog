@@ -8,14 +8,17 @@ import PostPreview from '../../components/PostPreview';
 
 const Post = ({ post, similarPosts }) => {
 
-    if (post && similarPosts) {
-        const { title, image, content, tagsCollection, categgories } = post[0];
-    }
-
     if (!post && !similarPosts) return (
-        <h1 className='h-full w-full text-center '> Loading</h1>
+        <div className='h-32 md:h-56 w-full text-raisin-black flex flex-col items-center justify-center font-bold '>
+            <h1 className='text-xl uppercase mb-2'>Page does not exist</h1>
+            <p className='text-lg capitalize'>Redirecting back to homepage...</p>
+        </div>
     );
+
+    const { title, image, content, tagsCollection, categgories } = post[0];
+
     return (
+
         <div className='w-full px-6 py-3 text-raisin-black'>
             <div className='w-full max-w-4xl mx-auto'>
                 <h1 className='my-3 text-xl font-bold md:mb-6 md:text-4xl'>{title}</h1>
@@ -71,8 +74,18 @@ export default Post;
 
 export async function getStaticProps({ params }) {
     const post = (await getPostBySlug(params.slug) || []);
-    const postCategory = post[0].categories['slug'];
+    const postCategory = post[0]?.categories['slug'];
     const similarPosts = (await getSimilarPosts(postCategory, params.slug) || []);
+
+    /* redirecting back to homepage if the path does not exist */
+    if (!post && !similarPosts && !postCategory) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        };
+    }
 
     return {
         props: {

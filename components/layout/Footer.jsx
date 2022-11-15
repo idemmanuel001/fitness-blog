@@ -47,7 +47,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="w-full h-fit">
+    <footer className="w-full h-fit relative bottom-0 left-0 right-0">
       <div className="flex flex-col items-center justify-center w-full px-6 py-6 bg-clear-day">
         <div className="flex flex-col items-center justify-center w-full h-full max-w-lg mb-4">
           <h2 className="w-full mb-2 font-bold text-center text-raisin-black">
