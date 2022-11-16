@@ -26,3 +26,10 @@ a {
   overflow: hidden;
 }
 
+.blog-post p {
+  margin-bottom: 0.2rem;
+}
+
+.blog-post ul {
+  margin-top: 0.6rem;
+}
