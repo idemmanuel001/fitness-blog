@@ -16,6 +16,7 @@ const Post = ({ post, similarPosts }) => {
     );
 
     if (post && similarPosts) {
+
         const { title, image, content, tagsCollection, categgories } = post[0];
 
         return (
@@ -52,19 +53,22 @@ const Post = ({ post, similarPosts }) => {
                     </ul>
 
                     {/* Similar posts */}
-                    <div className='my-6'>
-                        <h2 className='text-xl font-bold'>
-                            You Can Also Read
-                        </h2>
 
-                        <div className='flex flex-col items-center md:justify-start' >
-                            {similarPosts.map(post => {
-                                return (
-                                    <PostPreview key={post.slug} post={post} />
-                                );
-                            })}
+                    {similarPosts.length > 0 && (
+                        <div className='my-6'>
+                            <h2 className='text-xl font-bold'>
+                                You Can Also Read:
+                            </h2>
+
+                            <div className='flex flex-col items-center md:justify-start' >
+                                {similarPosts.map(post => {
+                                    return (
+                                        <PostPreview key={post.slug} post={post} />
+                                    );
+                                })}
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </div>
 
             </div>
@@ -93,7 +97,7 @@ export async function getStaticProps({ params }) {
         props: {
             post,
             similarPosts,
-            revalidate: 10,
+            revalidate: 1,
         }
     };
 };

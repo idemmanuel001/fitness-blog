@@ -73,6 +73,7 @@ export async function getStaticProps({ params }) {
     const getTagPosts = (posts) => {
         let newArray = [];
         posts.forEach(post => {
+            
             /*Spreading the post tag items into a single array of items */
             let items = [...post['tagsCollection']['items']];
 
