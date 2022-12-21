@@ -2,17 +2,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import moment from 'moment/moment';
 
+
 const PostPreview = ({ post }) => {
     const { title, slug, image, publishedDate, excerpt } = post;
 
     return (
-        <div className="flex flex-col items-center justify-center w-full my-4 shadow-sm md:justify-start md:flex-row">
+        <div className="flex flex-col items-center justify-center w-full my-4 shadow-sm md:justify-start md:flex-row" >
             <div className="relative block w-full max-w-2xl border h-52 md:h-40 md:w-72">
                 <Image
                     src={image.url}
                     alt={image.title}
                     layout='fill'
-                    quality={30}
+                    quality={3.5}
                     objectFit='cover'
                     objectPosition='center center'
                 />
@@ -32,7 +33,6 @@ const PostPreview = ({ post }) => {
 
             </div>
         </div>
-
     );
 };
 

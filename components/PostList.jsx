@@ -1,6 +1,8 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import Categories from './Categories';
 import PostPreview from './PostPreview';
+import { Slide } from "react-awesome-reveal";
+
 
 
 const PostLists = ({ posts, categories }) => {
@@ -26,8 +28,10 @@ const PostLists = ({ posts, categories }) => {
     return (
       <div className='flex flex-col w-full md:grow md:mr-12 md:items-start md:justify-center'>
         <Categories filterItems={filterItems} categories={categories} renderedPosts={renderedPosts} />
+        <Slide direction='up' delay={50} duration={500} >
+          <h2 className='mt-10 mb-24 text-base font-bold text-center md:text-lg md:my-4 text-night-rider'>No Post For This Category</h2>
+        </Slide >
 
-        <h2 className='mt-10 mb-24 text-base font-bold text-center md:text-lg md:my-4 text-night-rider'>No Post For This Category</h2>
       </div>
     );
   }
@@ -41,9 +45,9 @@ const PostLists = ({ posts, categories }) => {
       {renderedPosts.length > 0 &&
         renderedPosts.map(post => {
           return (
-            <Fragment key={post.slug}>
+            <Slide key={post.slug} triggerOnce='true' direction='up' delay={50} duration={500} damping={0.3}>
               <PostPreview post={post} />
-            </Fragment>
+            </Slide>
           );
         })}
 
