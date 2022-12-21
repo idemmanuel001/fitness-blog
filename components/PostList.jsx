@@ -27,7 +27,7 @@ const PostLists = ({ posts, categories }) => {
       <div className='flex flex-col w-full md:grow md:mr-12 md:items-start md:justify-center'>
         <Categories filterItems={filterItems} categories={categories} renderedPosts={renderedPosts} />
 
-        <h2 className='my-4 text-lg font-bold text-center text-night-rider'>No Post For This Category</h2>
+        <h2 className='mt-10 mb-24 text-base font-bold text-center md:text-lg md:my-4 text-night-rider'>No Post For This Category</h2>
       </div>
     );
   }
